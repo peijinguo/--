@@ -1,0 +1,53 @@
+.wrap {
+    margin: 0 auto;
+    line-height: 1.5;
+    
+}
+
+@media (min-width:960px) {
+    .wrap{
+        max-width: 960px;
+    }
+    
+}
+
+.header a {
+    background-image: url(logo-mobile.png);
+    width: 44px;
+    height: 39px;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 60px;
+}
+
+.content ul li{
+        width: 100%;
+        }
+
+@media (min-width:780px) {
+    .header a {
+        background-image: url(logo.png);
+        width: 164px;
+        height: 39px;
+    }
+    .content ul li{
+        width: 40%;
+    }  
+    .content ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }  
+}
+
+@media (min-width:960px) {
+    .content ul li{
+        width: 30%;
+    }  
+}
