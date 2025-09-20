@@ -1,0 +1,129 @@
+.wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: solid 1px black;
+    align-items: center;
+    position: relative;
+
+}
+
+.menu ul {
+    display: flex;
+    justify-content: flex-end
+}
+
+.menu ul li a {
+    margin-left: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+.content {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo a {
+    background-image: url(https://shoplineimg.com/6641ba368261270042931b84/6670fd572f5e410010893897/900x.webp?source_format=png);
+    width: 80px;
+    height: 80px;
+    display: block;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    /* 避免重複 */
+    background-position: center;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.menu ul li :hover {
+    color: rgb(111, 159, 156);
+    border-bottom: solid 3px rgb(111, 159, 156);
+
+}
+
+.showmenu {
+    display: none;
+}
+
+
+
+@media (max-width:760px) {
+    .menu {
+        max-height: 0px;
+        overflow: hidden;
+        position: absolute;
+        /*.header要寫position:relitive*/
+        top: 101px;
+        left: 0;
+        right: 0;
+        background-color: rgb(211, 225, 224);
+    }
+
+    .showmenu {
+        background-image: url(https://cdn-icons-png.flaticon.com/128/9121/9121524.png);
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-size: 60% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /*jQ點擊後動態在 body 加上 class */
+    .menu-show .menu {
+        max-height: 600px
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        width: 100%; /*li填滿父容器*/
+        border-bottom: 2px dotted;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        display: block;
+    }
+    .menu ul li :hover {
+        border-bottom: none;
+        background-color: rgb(227, 238, 237);
+    }
+
+    .header {
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        /* header 高度 */
+        z-index: 999;
+        background-color: white;
+    }
+
+    .content {
+        padding-top: 101px;
+    }
+
+
+
+
+}
