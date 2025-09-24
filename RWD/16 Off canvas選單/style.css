@@ -1,0 +1,128 @@
+.wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: solid 1px black;
+    align-items: center;
+}
+
+.header ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul li {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.aside {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /*上下貼齊父元素，跟父元素同高 */
+    left: 0;
+    /* 固定參考點 */
+    width: 270px;
+    /* 給定寬度，方便使用 -100% 隱藏 */
+    -webkit-transform: translateX
+    (-100%);
+    /*給舊版的 WebKit 瀏覽器（像早期的 Chrome、Safari）用的前綴寫法*/
+    /*把元素整個往左平移 100%*/
+    transform: translateX(-100%);
+    transition: all .3s;
+}
+
+
+
+
+.mobile-link {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+}
+
+.open .aside {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+
+
+@media (max-width:768px) {
+    .header ul {
+        display: none;
+    }
+
+    .mobile-link {
+        display: block;
+        background-image: url(https://cdn-icons-png.flaticon.com/128/9121/9121524.png);
+        width: 80px;
+        height: 80px;
+        background-size: 60% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .aside {
+        background-color: rgb(175, 179, 179);
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .mobile-close {
+        background-image: url(https://cdn-icons-png.flaticon.com/128/1/1193.png);
+        width: 30px;
+        height: 30px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .aside ul li a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        border-bottom: dotted;
+    }
+
+    .aside ul li a:hover {
+        background-color: rgb(186, 138, 177);
+        color: white;
+    }
+}
+
+@media (min-width:768px) {
+    .aside {
+        display: none;
+    }
+}
